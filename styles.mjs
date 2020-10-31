@@ -77,10 +77,10 @@ export default {
 
     text: css({
         fontFamily: "Roboto",
-        fontSize: "14px",
+        fontSize: "16px",
         fontWeight: 200,
         color: "white",
-        margin: 0,
+        margin: "4px",
         textAlign: "center"
     })
 }

@@ -1,4 +1,6 @@
 const actions = require("./actions.mjs").default;
+const config = require("./ressources/config.json");
+import debug from "./debug.mjs";
 
 const setWeather = (dispatch) => {
     actions.getWeather().then( data => {
@@ -30,9 +32,31 @@ const setWeather = (dispatch) => {
     },60000-(Date.now()%60000));
   }
 
+  const setThings = async (dispatch) => {
+    const [today] = await Promise.all([actions.getThingsToday()]);
+    var done  = today.filter(todo => !!todo.completion_date);
+    var todos = today.filter(todo => !todo.completion_date);
+    dispatch({type: 'UPDATE_THINGS', data: {done: done, today: todos}});
+  }
+
+
   const setReminders = async (dispatch) => {
     const [todo, done] = await Promise.all([actions.getRemindersNotDone(), actions.getRemindersDone()]);
     dispatch({type: 'UPDATE_REMINDERS', data: {todo, done} || [] });
+  }
+
+const openThingsTodo = (dispatch, id)  => {
+  if (id) {
+    let req={program: "things", path: "/show", options: {id: id}}
+    dispatch({type: 'OPEN_THINGS', data: req})
+  }
+}
+
+  const changeThingsStatus = (dispatch, todo) => {
+    dispatch({type: 'CHANGE_THINGS_STATUS', data: todo});
+    console.log("Changing", debug.mydump(todo));
+    actions.xurlcallback({program: 'things', path: '/update', options: {id: todo.id, completed: !todo.oldStatus }});
+    setThings(dispatch);
   }
 
   const changeReminderStatus = (dispatch, reminder) => {
@@ -46,4 +70,4 @@ const setWeather = (dispatch) => {
   }
 
 
-  export default { setName, setWeather, setHours, setReminders, changeReminderStatus }
+  export default { setName, setWeather, setHours, setReminders, changeThingsStatus, changeReminderStatus, setThings, openThingsTodo}

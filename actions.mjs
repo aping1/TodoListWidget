@@ -1,4 +1,5 @@
 const { run } = require("uebersicht");
+import debug from "./debug.mjs";
 const config = require("./ressources/config.json");
 
 let PATH = undefined;
@@ -34,6 +35,30 @@ const getDate = () => {
     return `${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`
 }
 
+const getThingsInbox = async () => {
+    let stdout;
+    try{
+        stdout = await run(`osascript "${PATH}/automator/get_things_inbox.applescript"`);
+        var todos = JSON.parse(stdout)
+        return todos.filter(x => !!x)
+    }catch(e){
+        console.error(e.message)
+    }
+    return []
+}
+
+const getThingsToday = async () => {
+    let stdout;
+    try{
+        stdout = await run(`osascript "${PATH}/automator/get_things_today.applescript"`);
+        var todos = JSON.parse(stdout)
+        return todos.filter(x => !!x)
+    }catch(e){
+        console.error(e.message)
+    }
+    return []
+}
+
 const getRemindersDone = async () => {
     let stdout;
     try{
@@ -60,11 +85,31 @@ const createReminder = async () => {
     return run(`osascript "${PATH}/automator/create_reminder.scpt"`);
 }
 
+const xurlcallback = ({program, path, options}) => {
+    var params = new URLSearchParams(options).toString();
+    var urlString = `${program}://${path}`;
+    var tokenString = '';
+    switch(program) { 
+        case "things": {
+            tokenString="&auth-token="+config.apis.THINGS_CALLBACK['auth-token'];
+        }
+    }
+    try{
+        console.log(`running command: open "${urlString}${!!params? '?' : ''}${params}"`);
+        run(`open "${urlString}${!!params? '?' : ''}${params}${tokenString}"`)
+            .then((stdout, error) => { if (error || stdout) console.warn(error, stdout); });
+    }catch(e){
+        console.warn("XURL exception", e, e.message);
+    }
+} 
+
 const completeReminder = (name) => {
     try{
-        run(`osascript "${PATH}/automator/complete_reminder.scpt" "${name}"`);
+        run(`osascript "${PATH}/automator/complete_reminder.scpt" "${name}"`).then((stdout, error) =>
+            console.warn(error)
+        )
     }catch(e){
-        console.error(e);
+        console.warn(e);
     }
 }
 
@@ -72,8 +117,8 @@ const uncompleteReminder = (name) => {
     try{
         run(`osascript "${PATH}/automator/uncomplete_reminder.scpt" "${name}"`);
     }catch(e){
-        console.error(e);
+        console.warn(e);
     }
 }
 
-export default { setCurrentPath, getName, getWeather, getHours, getDate, getRemindersDone, getRemindersNotDone, createReminder, completeReminder, uncompleteReminder }
+export default { setCurrentPath, getName, getWeather, getHours, getDate, getRemindersDone, getRemindersNotDone, createReminder, completeReminder, uncompleteReminder, getThingsInbox, getThingsToday, xurlcallback}

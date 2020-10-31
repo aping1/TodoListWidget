@@ -24,3 +24,27 @@ export const Task = (props) => {
       </div>
     )
   }
+
+export const ThingsTask = (props) => {
+
+    const thingsClick = () => {
+      dispatchers.openThingsTodo(props.dispatch, props.id)
+    }
+    const thingsButtonHandler = () => {
+      dispatchers.changeThingsStatus(props.dispatch, {name: `${props.name}`, id: props.id, oldStatus: props.status})
+    }
+    return (
+      <div className={`${css({display: "flex", alignItems: "center", marginBottom: "10px"})}`}>
+        <button onClick={thingsButtonHandler} className={`${css({
+          width: "15px",
+          height: "15px",
+          borderRadius: "8px",
+          border: "1px solid",
+          borderColor: props.color,
+          backgroundColor: !!props.completion_date ? props.color : "transparent"})}`}></button>
+        <p className={`${css({marginLeft: "20px", textAlign: "left", textDecoration: "none"})} ${text}`} onClick={thingsClick}>
+        {props.children}
+        </p>
+      </div>
+    )
+  }

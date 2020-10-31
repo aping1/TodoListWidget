@@ -1,6 +1,6 @@
 import { css } from "uebersicht";
 import styles from "../styles.mjs";
-import {Task} from "../components/Task.jsx";
+import {Task, ThingsTask} from "../components/Task.jsx";
 
 const {text} = styles;
 
@@ -8,7 +8,7 @@ export const ListContainer = ({reminders, done, sentences:{plural, singular}, co
     return (
         <div>
             <p className={`${css({margin: "10px 0", fontSize: "11px"})} ${text}`}>
-                {reminders.length > 1 ?
+                {!!reminders && reminders.length > 1 ?
                 `${reminders.length} ${plural}` :   
                 `${reminders.length} ${singular}`
                 }
@@ -24,6 +24,34 @@ export const ListContainer = ({reminders, done, sentences:{plural, singular}, co
                 >
                     {reminder}
                 </Task>
+            ))} 
+            </div>
+        </div>
+    )
+}
+
+export const ThingsListContainer = ({todos, done, sentences:{plural, singular}, color, dispatch}) => {
+    // for more info on things:// callback
+    // https://culturedcode.com/things/support/articles/2803573/ 
+    return (
+        <div>
+            <p className={`${css({margin: "10px 0", fontSize: "11px"})} ${text}`}>
+                {todos.length > 1 ?
+                `${todos.length} ${plural}` :   
+                `${todos.length} ${singular}`
+                }
+            </p>
+            <div className={`${css({marginLeft: "10px"})}`}>
+            {todos.map((todo,index) => (
+                <ThingsTask
+                    name={todo.name}
+                    status={done}
+                    dispatch={dispatch}
+                    key={index}
+                    id={todo.id}
+                    color={color}>
+                        {todo.name}
+                </ThingsTask>
             ))}
             </div>
         </div>
