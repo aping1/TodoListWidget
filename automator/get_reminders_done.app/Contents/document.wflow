@@ -30,7 +30,7 @@
 				<string>3.0.1</string>
 				<key>AMApplication</key>
 				<array>
-					<string>Calendrier</string>
+					<string>Calendar</string>
 				</array>
 				<key>AMParameterProperties</key>
 				<dict>
@@ -59,7 +59,7 @@
 				<key>ActionBundlePath</key>
 				<string>/System/Library/Automator/Find Calendar Items 2.action</string>
 				<key>ActionName</key>
-				<string>Rechercher des rappels</string>
+				<string>Find Reminders</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>itemType</key>
@@ -69,58 +69,59 @@
 					YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25Z
 					JGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGG
 					oF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290
-					gAGvECILDBMZISssLjU5Pj9CRkpPUFNbX2No
-					bXF0dXh/gISIiY2PVSRudWxs0w0ODxAREl8Q
-					F05TQ29tcG91bmRQcmVkaWNhdGVUeXBlXxAP
-					TlNTdWJwcmVkaWNhdGVzViRjbGFzcxABgAKA
-					IdIUDxUYWk5TLm9iamVjdHOiFheAA4AUgCDU
-					DxobHB0eHyBfEBFOU1JpZ2h0RXhwcmVzc2lv
-					bl8QEE5TTGVmdEV4cHJlc3Npb25fEBNOU1By
-					ZWRpY2F0ZU9wZXJhdG9ygBOADoAEgBHVIiMk
-					JQ8mJygpKllOU09wZXJhbmReTlNTZWxlY3Rv
-					ck5hbWVfEBBOU0V4cHJlc3Npb25UeXBlW05T
-					QXJndW1lbnRzgAaABRADgAiADVx2YWx1ZUZv
-					cktleTrSJA8QLYAH0i8wMTJaJGNsYXNzbmFt
-					ZVgkY2xhc3Nlc18QEE5TU2VsZkV4cHJlc3Np
-					b26jMTM0XE5TRXhwcmVzc2lvblhOU09iamVj
-					dNIUDzY4oTeACYAM0w8kOjs8PVlOU0tleVBh
-					dGiACxAKgApbaXNDb21wbGV0ZWTSLzBAQV8Q
-					HE5TS2V5UGF0aFNwZWNpZmllckV4cHJlc3Np
-					b26jQDM00i8wQ0ReTlNNdXRhYmxlQXJyYXmj
-					Q0U0V05TQXJyYXnSLzBHSF8QE05TS2V5UGF0
-					aEV4cHJlc3Npb26kR0kzNF8QFE5TRnVuY3Rp
-					b25FeHByZXNzaW9u00skD0xNTl8QD05TQ29u
-					c3RhbnRWYWx1ZYAPEACAEBAB0i8wUVJfEBlO
-					U0NvbnN0YW50VmFsdWVFeHByZXNzaW9uo1Ez
-					NNUPVFVWV1hNWU1aWk5TTW9kaWZpZXJYTlNO
-					ZWdhdGVZTlNPcHRpb25zXk5TT3BlcmF0b3JU
-					eXBlgBIIEATSLzBcXV8QG05TRXF1YWxpdHlQ
-					cmVkaWNhdGVPcGVyYXRvcqNcXjRfEBNOU1By
-					ZWRpY2F0ZU9wZXJhdG9y0i8wYGFfEBVOU0Nv
-					bXBhcmlzb25QcmVkaWNhdGWjYGI0W05TUHJl
-					ZGljYXRl1A8aGxwdZWZngBOAGYAVgB3VIiMk
-					JQ8mJyhrKoAGgAWAFoAN0hQPbjihb4AXgAzT
-					DyQ6OzxzgAuAGFdkdWVEYXRl00skD3ZNToAa
-					gBDTeRQPenx+V05TLmtleXOhe4AboUyAD4Ac
-					XXByZWRpY2F0ZVR5cGXSLzCBgl8QE05TTXV0
-					YWJsZURpY3Rpb25hcnmjgYM0XE5TRGljdGlv
-					bmFyedQjVA9XhU2Gh4AegB8QC1hpc1RvZGF5
-					OtIvMIqLXxAZTlNDdXN0b21QcmVkaWNhdGVP
-					cGVyYXRvcqOMXjRfEBlOU0N1c3RvbVByZWRp
-					Y2F0ZU9wZXJhdG9y0i8wRY6iRTTSLzCQkV8Q
-					E05TQ29tcG91bmRQcmVkaWNhdGWjkGI0AAgA
-					EQAaACQAKQAyADcASQBMAFEAUwB4AH4AhQCf
-					ALEAuAC6ALwAvgDDAM4A0QDTANUA1wDgAPQB
-					BwEdAR8BIQEjASUBMAE6AUkBXAFoAWoBbAFu
-					AXABcgF/AYQBhgGLAZYBnwGyAbYBwwHMAdEB
-					0wHVAdcB3gHoAeoB7AHuAfoB/wIeAiICJwI2
-					AjoCQgJHAl0CYgJ5AoACkgKUApYCmAKaAp8C
-					uwK/AsoC1QLeAugC9wL5AvoC/AMBAx8DIwM5
-					Az4DVgNaA2YDbwNxA3MDdQN3A4IDhAOGA4gD
-					igOPA5EDkwOVA5wDngOgA6gDrwOxA7MDugPC
-					A8QDxgPIA8oDzAPaA98D9QP5BAYEDwQRBBME
-					FQQeBCMEPwRDBF8EZARnBGwEggAAAAAAAAIB
-					AAAAAAAAAJIAAAAAAAAAAAAAAAAAAASG
+					gAGvECMLDBMZISssLjU5Pj9CRkpPUFNbX2No
+					bXF0dXh/gIGFiYqOkFUkbnVsbNMNDg8QERJf
+					EBdOU0NvbXBvdW5kUHJlZGljYXRlVHlwZV8Q
+					D05TU3VicHJlZGljYXRlc1YkY2xhc3MQAYAC
+					gCLSFA8VGFpOUy5vYmplY3RzohYXgAOAFIAh
+					1A8aGxwdHh8gXxARTlNSaWdodEV4cHJlc3Np
+					b25fEBBOU0xlZnRFeHByZXNzaW9uXxATTlNQ
+					cmVkaWNhdGVPcGVyYXRvcoATgA6ABIAR1SIj
+					JCUPJicoKSpZTlNPcGVyYW5kXk5TU2VsZWN0
+					b3JOYW1lXxAQTlNFeHByZXNzaW9uVHlwZVtO
+					U0FyZ3VtZW50c4AGgAUQA4AIgA1cdmFsdWVG
+					b3JLZXk60iQPEC2AB9IvMDEyWiRjbGFzc25h
+					bWVYJGNsYXNzZXNfEBBOU1NlbGZFeHByZXNz
+					aW9uozEzNFxOU0V4cHJlc3Npb25YTlNPYmpl
+					Y3TSFA82OKE3gAmADNMPJDo7PD1ZTlNLZXlQ
+					YXRogAsQCoAKW2lzQ29tcGxldGVk0i8wQEFf
+					EBxOU0tleVBhdGhTcGVjaWZpZXJFeHByZXNz
+					aW9uo0AzNNIvMENEXk5TTXV0YWJsZUFycmF5
+					o0NFNFdOU0FycmF50i8wR0hfEBNOU0tleVBh
+					dGhFeHByZXNzaW9upEdJMzRfEBROU0Z1bmN0
+					aW9uRXhwcmVzc2lvbtNLJA9MTU5fEA9OU0Nv
+					bnN0YW50VmFsdWWADxAAgBAQAdIvMFFSXxAZ
+					TlNDb25zdGFudFZhbHVlRXhwcmVzc2lvbqNR
+					MzTVD1RVVldYTVlNWlpOU01vZGlmaWVyWE5T
+					TmVnYXRlWU5TT3B0aW9uc15OU09wZXJhdG9y
+					VHlwZYASCBAE0i8wXF1fEBtOU0VxdWFsaXR5
+					UHJlZGljYXRlT3BlcmF0b3KjXF40XxATTlNQ
+					cmVkaWNhdGVPcGVyYXRvctIvMGBhXxAVTlND
+					b21wYXJpc29uUHJlZGljYXRlo2BiNFtOU1By
+					ZWRpY2F0ZdQPGhscHWVmZ4ATgBmAFYAe1SIj
+					JCUPJicoayqABoAFgBaADdIUD244oW+AF4AM
+					0w8kOjs8c4ALgBhdY29tcGxldGVkRGF0ZdNL
+					JA92TU6AGoAQ03kUD3p8fldOUy5rZXlzoXuA
+					G6F9gByAHV1wcmVkaWNhdGVUeXBlEALSLzCC
+					g18QE05TTXV0YWJsZURpY3Rpb25hcnmjgoQ0
+					XE5TRGljdGlvbmFyedQjVA9Xhk2HiIAfgCAQ
+					C1tpc1RoaXNXZWVrOtIvMIuMXxAZTlNDdXN0
+					b21QcmVkaWNhdGVPcGVyYXRvcqONXjRfEBlO
+					U0N1c3RvbVByZWRpY2F0ZU9wZXJhdG9y0i8w
+					RY+iRTTSLzCRkl8QE05TQ29tcG91bmRQcmVk
+					aWNhdGWjkWI0AAgAEQAaACQAKQAyADcASQBM
+					AFEAUwB5AH8AhgCgALIAuQC7AL0AvwDEAM8A
+					0gDUANYA2ADhAPUBCAEeASABIgEkASYBMQE7
+					AUoBXQFpAWsBbQFvAXEBcwGAAYUBhwGMAZcB
+					oAGzAbcBxAHNAdIB1AHWAdgB3wHpAesB7QHv
+					AfsCAAIfAiMCKAI3AjsCQwJIAl4CYwJ6AoEC
+					kwKVApcCmQKbAqACvALAAssC1gLfAukC+AL6
+					AvsC/QMCAyADJAM6Az8DVwNbA2cDcANyA3QD
+					dgN4A4MDhQOHA4kDiwOQA5IDlAOWA50DnwOh
+					A68DtgO4A7oDwQPJA8sDzQPPA9ED0wPhA+MD
+					6AP+BAIEDwQYBBoEHAQeBCoELwRLBE8EawRw
+					BHMEeASOAAAAAAAAAgEAAAAAAAAAkwAAAAAA
+					AAAAAAAAAAAABJI=
 					</data>
 				</dict>
 				<key>BundleIdentifier</key>
@@ -177,7 +178,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.000000:273.000000</string>
+				<string>600.000000:453.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Find Calendar Items 2.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -200,7 +201,7 @@
 				<string>2.0.1</string>
 				<key>AMApplication</key>
 				<array>
-					<string>Calendrier</string>
+					<string>Calendar</string>
 				</array>
 				<key>AMParameterProperties</key>
 				<dict>
@@ -219,7 +220,7 @@
 				<key>ActionBundlePath</key>
 				<string>/System/Library/Automator/Event Summary.action</string>
 				<key>ActionName</key>
-				<string>Résumé des événements</string>
+				<string>Event Summary</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>summaryRange</key>
@@ -243,9 +244,9 @@
 				<string>B6A22986-2F29-43C6-82D1-995307FDD482</string>
 				<key>Keywords</key>
 				<array>
-					<string>Résumé</string>
-					<string>Événement</string>
-					<string>Calendrier</string>
+					<string>Summary</string>
+					<string>Event</string>
+					<string>Calendar</string>
 				</array>
 				<key>OutputUUID</key>
 				<string>90872C1D-2BFF-4634-B124-CE13A79557D4</string>
@@ -276,7 +277,7 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>B6990C4E-6D0E-42ED-B096-DA050D8B639F</key>
+		<key>8D6D6465-2842-4F31-BE8E-A73B68A9E8A9</key>
 		<dict>
 			<key>from</key>
 			<string>18A8829D-939A-4E9A-A280-81B564DF9A08 - 18A8829D-939A-4E9A-A280-81B564DF9A08</string>
