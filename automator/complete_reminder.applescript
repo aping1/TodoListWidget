@@ -1,0 +1,1 @@
+#!/usr/bin/osascripton run input	set reminderName to input as text		set today to current date	set time of today to 0	copy today to midnight	set time of midnight to 86400		tell application "Reminders"		set completed of (reminders whose name is reminderName and due date ¿ today and due date < midnight) to true		quit	end tellend run

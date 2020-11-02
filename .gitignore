@@ -11,3 +11,5 @@ ehthumbs.db
 Thumbs.db
 .idea
 .mypy_cache
+
+automator/*.scpt
