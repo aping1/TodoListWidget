@@ -186,16 +186,9 @@ export const render = ({name, weather, time, reminders, things}, dispatch) => {
           /> : ""}
           <ListContainer
             dispatch={dispatch}
-            reminders={reminders.todo}
+            reminders={reminders ? reminders.todo : []}
             done={false}
             sentences={{plural: config.todo.uncompletedTasksTitle, singular: config.todo.uncompletedTaskTitle}}
-            color={current_activeColor}
-          />
-          <ListContainer
-            dispatch={dispatch}
-            reminders={reminders.done}
-            done={true}
-            sentences={{plural: config.todo.completedTasksTitle, singular: config.todo.completedTaskTitle}}
             color={current_activeColor}
           />
         </ToDoContainer>
