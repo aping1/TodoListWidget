@@ -26,7 +26,7 @@ export const className = `
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
     left: 1vw;;
     top: 20px;
-    width: 20vw;
+    width: 338px;
     height: 95vh;
     border-radius: 20px;
     overflow: hidden;
