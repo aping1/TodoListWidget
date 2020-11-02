@@ -1,0 +1,13 @@
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._zinit
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea
+.mypy_cache
