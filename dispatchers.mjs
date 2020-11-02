@@ -1,6 +1,4 @@
 const actions = require("./actions.mjs").default;
-const config = require("./ressources/config.json");
-import debug from "./debug.mjs";
 
 const setWeather = (dispatch) => {
     actions.getWeather().then( data => {

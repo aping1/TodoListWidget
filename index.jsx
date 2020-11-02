@@ -2,8 +2,6 @@ import { css } from "uebersicht";
 // NOTE: 1. create an emitter that takes dispatch in dispatcher.mj, dont forget to export it at the
 import dispatchers from "./dispatchers.mjs";
 
-import debug from "./debug.mjs";
-
 import actions from "./actions.mjs";
 import config from "./ressources/config.json";
 import styles from "./styles.mjs";

@@ -1,7 +1,6 @@
 import { css } from "uebersicht";
 import styles from "../styles.mjs";
 import config from "../ressources/config.json";
-import debug from "../debug.mjs";
 
 
 const {WeatherContainer, Temperature} = styles;
