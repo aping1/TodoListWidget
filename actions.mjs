@@ -1,5 +1,5 @@
+
 const { run } = require("uebersicht");
-import debug from "./debug.mjs";
 const config = require("./ressources/config.json");
 
 let PATH = undefined;
@@ -48,6 +48,7 @@ const getThingsInbox = async () => {
 }
 
 const getThingsToday = async () => {
+
     let stdout;
     try{
         stdout = await run(`osascript "${PATH}/automator/get_things_today.applescript"`);
@@ -73,16 +74,19 @@ const getRemindersDone = async () => {
 const getRemindersNotDone = async () => {
     let stdout;
     try{
-        stdout = await run(`automator "${PATH}/automator/get_reminders_not_done.app"`);
+        stdout = await run(`osascript "${PATH}/automator/get_reminders_not_done.scpt"`);
+        var todos = JSON.parse(stdout);
+        console.log("Reminders: " +   `osascript "${PATH}/automator/get_reminders_not_done.scpt"`, todos);
+        return todos.filter(x => !!x);
     }catch(e){
-        stdout = e.message;
+        console.warn(e.message);
     }
-    const matches = [...stdout.matchAll(/Summary:\s*(.*)\n/g)];
-    return matches.map(group => group[1])
+    return []
 }
 
 const createReminder = async () => {
-    return run(`osascript "${PATH}/automator/create_reminder.scpt"`);
+
+    return await run(`osascript "${PATH}/automator/create_reminder.scpt"`);
 }
 
 const xurlcallback = ({program, path, options}) => {
@@ -90,7 +94,7 @@ const xurlcallback = ({program, path, options}) => {
     var urlString = `${program}://${path}`;
     var tokenString = '';
     switch(program) { 
-        case "things": {
+    case "things": {
             tokenString="&auth-token="+config.apis.THINGS_CALLBACK['auth-token'];
         }
     }

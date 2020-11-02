@@ -41,8 +41,13 @@ const setWeather = (dispatch) => {
 
 
   const setReminders = async (dispatch) => {
-    const [todo, done] = await Promise.all([actions.getRemindersNotDone(), actions.getRemindersDone()]);
-    dispatch({type: 'UPDATE_REMINDERS', data: {todo, done} || [] });
+    try{
+      const [todo, done] = await Promise.all([actions.getRemindersNotDone(), actions.getRemindersDone()]);
+      if (!!todo || !!done) { dispatch({type: 'UPDATE_REMINDERS', data: {todo, done} || [] }); }
+      else { console.warn("Reminder miss");}
+    } catch(e) {
+      console.warn("Reminder set failed:", e)
+    }
   }
 
 const openThingsTodo = (dispatch, id)  => {

@@ -33,6 +33,11 @@ export const ListContainer = ({reminders, done, sentences:{plural, singular}, co
 export const ThingsListContainer = ({todos, done, sentences:{plural, singular}, color, dispatch}) => {
     // for more info on things:// callback
     // https://culturedcode.com/things/support/articles/2803573/ 
+    if (!todos || todos.length == 0){ return ( <div>
+            <p className={`${css({margin: "10px 0", fontSize: "11px"})} ${text}`}>
+                0: Things {plural} 
+            </p></div>
+            )}
     return (
         <div>
             <p className={`${css({margin: "10px 0", fontSize: "11px"})} ${text}`}>
